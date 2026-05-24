@@ -32,7 +32,7 @@
 // 		w.Header().Set("Access-Control-Allow-Origin", "*")
 // 		w.Header().Set("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS")
 // 		// w.Header().Set("Access-Control-Allow-Headers", "Content-Type")
-		
+
 // 		// [PERBAIKAN] Tambahkan "Authorization" agar Golang mau menerima token JWT
 // 		w.Header().Set("Access-Control-Allow-Headers", "Content-Type, Authorization")
 // 		if r.Method == "OPTIONS" {
@@ -50,9 +50,9 @@ import (
 	"log"
 	"net/http"
 
-	"github.com/go-chi/chi/v5"
 	"github.com/SeanAlden/my-store/config"
 	"github.com/SeanAlden/my-store/routes"
+	"github.com/go-chi/chi/v5"
 )
 
 func main() {
@@ -60,6 +60,10 @@ func main() {
 	fmt.Println("Database Connected!")
 
 	r := chi.NewRouter()
+
+	r.Get("/", func(w http.ResponseWriter, r *http.Request) {
+		w.Write([]byte("This API Running Successfully"))
+	})
 
 	// routes API
 	routes.RegisterRoutes(r)
@@ -80,7 +84,7 @@ func corsMiddleware(next http.Handler) http.Handler {
 		w.Header().Set("Access-Control-Allow-Origin", "*")
 		w.Header().Set("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS")
 		// w.Header().Set("Access-Control-Allow-Headers", "Content-Type")
-		
+
 		// [PERBAIKAN] Tambahkan "Authorization" agar Golang mau menerima token JWT
 		w.Header().Set("Access-Control-Allow-Headers", "Content-Type, Authorization")
 		if r.Method == "OPTIONS" {
