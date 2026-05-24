@@ -6,7 +6,7 @@ import (
 	"net/http"
 	"time"
 
-	"github.com/seanalden-great/gycora-api/config"
+	"github.com/SeanAlden/my-store/config"
 )
 
 // ContactRequest hanya menerima isi pesan dari frontend

@@ -9,7 +9,7 @@ import (
 	"github.com/golang-jwt/jwt/v5"
 	"golang.org/x/crypto/bcrypt"
 
-	"github.com/seanalden-great/gycora-api/config"
+	"github.com/SeanAlden/my-store/config"
 
 )
 

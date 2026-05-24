@@ -10,7 +10,7 @@ import (
 	"path/filepath"
 	"time"
 
-	"github.com/seanalden-great/gycora-api/config"
+	"github.com/SeanAlden/my-store/config"
 
 )
 

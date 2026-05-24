@@ -10,7 +10,7 @@ import (
 
 	"github.com/golang-jwt/jwt/v5"
 
-	"github.com/seanalden-great/gycora-api/config"
+	"github.com/SeanAlden/my-store/config"
 )
 
 // Struktur Data Keranjang (Mirip Eloquent Relationship with('product'))
