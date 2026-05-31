@@ -48,8 +48,8 @@
 package routes
 
 import (
-	"github.com/go-chi/chi/v5"
 	"github.com/SeanAlden/my-store/controllers"
+	"github.com/go-chi/chi/v5"
 )
 
 func RegisterRoutes(r chi.Router) {
@@ -73,6 +73,8 @@ func RegisterRoutes(r chi.Router) {
 		api.Post("/register", controllers.Register)
 		api.Post("/login", controllers.Login)
 		api.Post("/admin/login", controllers.AdminLogin)
+		api.Get("/admin/users", controllers.GetAllUsers)
+		api.Put("/profile", controllers.UpdateProfile)
 
 		// carts
 		api.Get("/carts", controllers.GetCarts)
